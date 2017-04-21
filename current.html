@@ -7,42 +7,82 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="current.css">
+    <link href="https://fonts.googleapis.com/css?family=Carter+One|Halant|Montserrat+Alternates" rel="stylesheet">
+    <style>
+      /*font-family: 'Carter One', cursive;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-family: 'Halant', serif;*/
+    </style>
   </head>
   <body>
     <h1>CSS Current</h1>
 
-    <h2>CSS Stable:</h2>
-    <h3>backgrounds and borders level 3</h3>
-    <h3>conditional rules level 3</h3>
-    <h3>multi-column layout</h3>
+    <div class="stable">
+      <h2>CSS Stable:</h2>
+      <h3>Backgrounds And Borders Level 3</h3>
+      <style>
+        .stable > .backgrounds {
+          height: 600px;
+          background-repeat: no-repeat;
+          background-position: 100% 22%, center;
+          background-attachment: fixed, scroll;
+          background-image: url(img/thor.png), url(img/fjord.jpg);
+        }
+        .stable > .backgrounds > p {
+          font-size: 600%;
+          font-weight: bold;
+          font-family: 'Carter One', cursive;
+          text-shadow: -0.06em 0 0 red, 0.06em 0 0 cyan;
+          position: absolute;
+          top: 7%;
+          left: 8%;
+        }
+      </style>
+      <div class="backgrounds"><p>UFF-DA!</p></div>
+      <h3>Conditional Rules Level 3</h3>
+      <h3>Multi Column Layout</h3>
+    </div>
 
     <hr>
 
-    <h2>CSS Testing:</h2>
-    <h3>Speech</h3>
-    <h3>Grid level 1</h3>
-    <h3>Compositing and blending level 1</h3>
-    <h3>Images values and replaced content module level 3</h3>
+    <div class="testing">
+      <h2>CSS Testing:</h2>
+      <h3>Speech</h3>
+      <h3>Grid level 1</h3>
+      <h3>Compositing and blending level 1</h3>
+      <h3>Images values and replaced content module level 3</h3>
+    </div>
 
     <hr>
 
-    <h2>CSS Refining:</h2>
-    <h3>Transforms</h3>
-    <h3>Will Change level 1</h3>
-    <h3>Web Animations</h3>
-    <h3>Transforms</h3>
+    <h1>CSS Next</h1>
+
+    <div class="refining">
+      <h2>CSS Refining:</h2>
+      <h3>Transforms</h3>
+      <h3>Will Change level 1</h3>
+      <h3>Web Animations</h3>
+      <h3>Transforms</h3>
+    </div>
 
     <hr>
 
-    <h2>CSS Revising:</h2>
-    <h3>Overflow level 3</h3>
-    <h3>Pseudo level 4</h3>
-    <h3>Selectors leve 4</h3>
-    <h3>Sizing level 3</h3>
+    <div class="revising">
+      <h2>CSS Revising:</h2>
+      <h3>Overflow level 3</h3>
+      <h3>Pseudo level 4</h3>
+      <h3>Selectors leve 4</h3>
+      <h3>Sizing level 3</h3>
+    </div>
 
     <hr>
 
-    <h2>CSS Exploring:</h2>
-
+    <div class="exploring">
+      <h2>CSS Exploring:</h2>
+      <h3>Device Adaptation Level 1</h3>
+      <h3>Filter Effects Level 1</h3>
+      <h3>Lists Level 3</h3>
+      <h3>Font Loading Level 3</h3>
+    </div>
   </body>
 </html>
