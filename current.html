@@ -40,6 +40,31 @@
       </style>
       <div class="backgrounds"><p>UFF-DA!</p></div>
       <h3>Conditional Rules Level 3</h3>
+      <style>
+        .conditional {
+          height: 3em;
+          width: 3em;
+          display: block;
+          position: relative;
+        }
+        .conditional > * {
+          display: none;
+        }
+        @supports (display: table-cell) and (display: list-item) {
+          .conditional > .supported{
+            display: block;
+          }
+        }
+        @supports (not (display: table-cell) and (display: list-item) ){
+          .conditional > .not-supported {
+            display: block;
+          }
+        }
+      </style>
+      <div class="conditional">
+        <div class="supported"></div>
+        <div class="not-supported"></div>
+      </div>
       <h3>Multi Column Layout</h3>
     </div>
 
