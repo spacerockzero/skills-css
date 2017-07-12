@@ -226,13 +226,30 @@
 
     <div class="refining">
       <h2>CSS Refining:</h2>
-      <h3>Transforms</h3>
-      <hr>
-      <h3>Will Change level 1</h3>
-      <hr>
-      <h3>Web Animations</h3>
-      <hr>
-      <h3>Transforms</h3>
+      <h3>Transforms, Transforms, CSS Timing Functions Level 1, Will Change level 1 (4 items)</h3>
+      <style>
+        .transform-container {
+          border: 5px solid black;
+          perspective: 500px;
+          height: 150px;
+          width: 150px;
+        }
+        .transform-container > .transformed{
+          height: 100%;
+          width: 100%;
+          will-change: transform;
+          background-color: blue;
+          transition: transform 1000ms ease-in-out;
+          cursor: pointer;
+        }
+        .transform-container:hover > .transformed{
+          transform: rotateY(50deg);
+          transition: transform 1000ms ease-in-out;
+        }
+      </style>
+      <div class="transform-container">
+        <div class="transformed"></div>
+      </div>
     </div>
 
     <hr>
@@ -240,12 +257,46 @@
     <div class="revising">
       <h2>CSS Revising:</h2>
       <h3>Overflow level 3</h3>
+      <style>
+        .overflow-outer {
+          height: 5em;
+          width: 5em;
+          overflow: hidden;
+          overflow-y: scroll;
+        }
+      </style>
+      <div class="overflow-outer">
+        <div>
+          INSIDE!
+          INSIDE!
+          INSIDE!
+          INSIDE!
+          INSIDE!
+          INSIDE!
+          INSIDE!
+          INSIDE!
+          INSIDE!
+        </div>
+      </div>
       <hr>
+
       <h3>Pseudo level 4</h3>
+      <style>
+        .pseudo::selection {
+          color: magenta;
+          background-color: mediumseagreen;
+        }
+      </style>
+      <p class="pseudo">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eveniet iure deserunt quidem laboriosam sint temporibus quibusdam velit, adipisci a sequi dolores. Tenetur, quaerat iure architecto quisquam provident excepturi neque!
+      </p>
       <hr>
-      <h3>Selectors leve 4</h3>
-      <hr>
-      <h3>Sizing level 3</h3>
+
+      <h3>CSS Ruby Level 1</h3>
+      <ruby>
+        <rb>Aerith</rb><rb> </rb><rb>Gainsboro</rb>
+        <rt>エアリス</rt><rt>・</rt><rt>ゲインズブール</rt>
+      </ruby>
     </div>
 
     <hr>
@@ -253,7 +304,15 @@
     <div class="exploring">
       <h2>CSS Exploring:</h2>
       <h3>Device Adaptation Level 1</h3>
+      <style>
+      @viewport {
+        width: extend-to-zoom 500px;
+        height: extend-to-zoom 600px;
+      }
+      </style>
+      (done in css)
       <hr>
+
       <h3>Filter Effects Level 1</h3>
       <hr>
       <h3>Lists Level 3</h3>
