@@ -388,6 +388,29 @@
       doEditing()
     </script>
   </div>
+
+  <h1>CSS Responsive Design:</h1>
+  <p>Proficient and appropriate use of media queries in html, css, and with different media types (see source)</p>
+  <style>
+    @media not screen and (color),
+    print and (color) {
+      html {
+        background-color: aqua;
+      }
+    }
+
+    @media (orientation: landscape) {
+      html {
+        background-color: blue;
+      }
+    }
+
+    @media (min-width: 1200px) and (hover:hover) {
+      html {
+        background-color: purple;
+      }
+    }
+  </style>
 </body>
 
 </html>
