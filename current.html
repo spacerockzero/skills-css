@@ -1,323 +1,393 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="current.css">
-    <link href="https://fonts.googleapis.com/css?family=Carter+One|Halant|Montserrat+Alternates" rel="stylesheet">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="current.css">
+  <link href="https://fonts.googleapis.com/css?family=Carter+One|Halant|Montserrat+Alternates" rel="stylesheet">
+  <style>
+    /* font-family: 'Montserrat Alternates', sans-serif; */
+    /* font-family: 'Halant', serif; */
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    html * {
+      font-family: 'Halant', serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Carter One', cursive;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CSS Current:</h1>
+  <ul>
+    <li>[x] 2 of the features from "Latest Stable CSS"</li>
+    <li>[x] 2 of the features from "Testing" status section</li>
+  </ul>
+
+  <div class="stable">
+    <h2>CSS Stable:</h2>
+    <h3>Backgrounds And Borders Level 3</h3>
     <style>
-      /* font-family: 'Montserrat Alternates', sans-serif; */
-      /* font-family: 'Halant', serif; */
-      *,
-      *:before,
-      *:after {
-        box-sizing: border-box;
+      .stable>.backgrounds {
+        height: 600px;
+        background-repeat: no-repeat;
+        background-position: 100% 22%, center;
+        background-attachment: fixed, scroll;
+        background-image: url(img/thor.png), url(img/fjord.jpg);
       }
-      html * {
-        font-family: 'Halant', serif;
-      }
-      h1,h2,h3,h4,h5,h6 {
+
+      .stable>.backgrounds>p {
+        font-size: 600%;
+        font-weight: bold;
         font-family: 'Carter One', cursive;
+        text-shadow: -0.06em 0 0 red, 0.06em 0 0 cyan;
+        position: absolute;
+        top: 7%;
+        left: 8%;
       }
     </style>
-  </head>
-  <body>
-    <h1>CSS Current</h1>
+    <div class="backgrounds">
+      <p>UFF-DA!</p>
+    </div>
+    <hr>
 
-    <div class="stable">
-      <h2>CSS Stable:</h2>
-      <h3>Backgrounds And Borders Level 3</h3>
-      <style>
-        .stable > .backgrounds {
-          height: 600px;
-          background-repeat: no-repeat;
-          background-position: 100% 22%, center;
-          background-attachment: fixed, scroll;
-          background-image: url(img/thor.png), url(img/fjord.jpg);
-        }
-        .stable > .backgrounds > p {
-          font-size: 600%;
-          font-weight: bold;
-          font-family: 'Carter One', cursive;
-          text-shadow: -0.06em 0 0 red, 0.06em 0 0 cyan;
-          position: absolute;
-          top: 7%;
-          left: 8%;
-        }
-      </style>
-      <div class="backgrounds"><p>UFF-DA!</p></div>
-      <hr>
+    <h3>Conditional Rules Level 3</h3>
+    <style>
+      .conditional {
+        display: flex;
+        position: relative;
+        height: 3em;
+        width: 5em;
+      }
 
-      <h3>Conditional Rules Level 3</h3>
-      <style>
-        .conditional {
+      .conditional>* {
+        display: none;
+        align-content: center;
+        color: goldenrod;
+      }
+
+      @supports (-webkit-backdrop-filter: blur(2px)) {
+        .conditional>.supported {
           display: flex;
-          position: relative;
-          height: 3em;
-          width: 5em;
-        }
-        .conditional > * {
-          display: none;
-          align-content: center;
-          color: goldenrod;
-        }
-        @supports (-webkit-backdrop-filter: blur(2px)) {
-          .conditional > .supported {
-            display: flex;
-            height: 5em;
-            -webkit-backdrop-filter: blur(2px) saturate(200%);
-          }
-        }
-        @supports (not (-webkit-backdrop-filter: blur(2px)) ){
-          .conditional > .not-supported {
-            display: flex;
-          }
-        }
-      </style>
-      <div class="conditional">
-        <div class="supported">Supported in Safari</div>
-        <div class="not-supported">Not Supported in Chrome</div>
-      </div>
-      <hr>
-
-      <h3>Multi Column Layout</h3>
-      <style>
-        #col {
-          -moz-column-count: 2;
-          -webkit-column-count: 2;
-          column-count: 2;
-        }
-      </style>
-      <div id="col">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua.
-        </p>
-        <p>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit
-          esse cillum dolore eu fugiat nulla pariatur.
-        </p>
-        <p>
-          Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="testing">
-      <h2>CSS Testing:</h2>
-      <h3>Speech</h3>
-      <style>
-      h1, h2, h3, h4, h5, h6
-        {
-          voice-family: paul;
-          voice-stress: moderate;
-          cue-before: url(../audio/ping.wav);
-          voice-volume: medium 6dB;
-        }
-        p.heidi
-        {
-          voice-family: female;
-          voice-balance: left;
-          voice-pitch: high;
-          voice-volume: -6dB;
-        }
-        p.peter
-        {
-          voice-family: male;
-          voice-balance: right;
-          voice-rate: fast;
-        }
-        span.special
-        {
-          voice-volume: soft;
-          pause-after: strong;
-        }
-        </style>
-        <h3>I am Paul, and I speak headings.</h3>
-        <p class="heidi">Hello, I am Heidi.</p>
-        <p class="peter">
-          <span class="special">Can you hear me ?</span>
-          I am Peter.
-        </p>
-      <hr>
-
-      <h3>Grid level 1</h3>
-      <style>
-        .grid-wrapper {
-          max-width: 940px;
-          margin: 0 20px;
-          display: grid;
-          grid-gap: 10px;
-        }
-        .grid-wrapper {
-          display: grid;
-          margin: 0 auto;
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          grid-auto-rows: minmax(150px, auto);
-        }
-        .grid-header,
-        .grid-footer {
-          margin-left: 5px;
-          margin-right: 5px;
-          flex: 0 1 100%;
-          grid-column: 1 / -1;
-        }
-        .grid-wrapper > * {
-          background-color: #444;
-          color: #fff;
-          border-radius: 5px;
-          padding: 20px;
-          font-size: 150%;
-          margin-bottom: 10px;
-        }
-      </style>
-      <div class="grid-wrapper">
-        <header class="grid-header">My header</header>
-        <div class="panel">Panel A</div>
-        <div class="panel">Panel B</div>
-        <div class="panel">Panel C</div>
-        <div class="panel">Panel D</div>
-        <div class="panel">Panel E</div>
-        <div class="panel">Panel F</div>
-        <div class="panel">Panel G</div>
-        <div class="panel">Panel H</div>
-        <div class="panel">Panel I</div>
-        <div class="panel">Panel J</div>
-        <footer class="grid-footer">My footer</footer>
-      </div>
-
-      <hr>
-      <h3>Compositing and blending level 1</h3>
-      <div class="conditional">
-        <div class="supported">Supported in Safari</div>
-        <div class="not-supported">Not Supported in Chrome</div>
-      </div>
-      <hr>
-      <h3>Images values and replaced content module level 3</h3>
-      <style>
-        .images-v-3 {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 5em;
-          /* width: 5em; */
-          background: linear-gradient(white, gray);
-        }
-      </style>
-      <div class="images-v-3">
-        <p>gradients can now be used in any css property that takes an image</p>
-      </div>
-    </div>
-
-    <hr>
-
-    <h1>CSS Next</h1>
-
-    <div class="refining">
-      <h2>CSS Refining:</h2>
-      <h3>Transforms, Transforms, CSS Timing Functions Level 1, Will Change level 1 (4 items)</h3>
-      <style>
-        .transform-container {
-          border: 5px solid black;
-          perspective: 500px;
-          height: 150px;
-          width: 150px;
-        }
-        .transform-container > .transformed{
-          height: 100%;
-          width: 100%;
-          will-change: transform;
-          background-color: blue;
-          transition: transform 1000ms ease-in-out;
-          cursor: pointer;
-        }
-        .transform-container:hover > .transformed{
-          transform: rotateY(50deg);
-          transition: transform 1000ms ease-in-out;
-        }
-      </style>
-      <div class="transform-container">
-        <div class="transformed"></div>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="revising">
-      <h2>CSS Revising:</h2>
-      <h3>Overflow level 3</h3>
-      <style>
-        .overflow-outer {
           height: 5em;
-          width: 5em;
-          overflow: hidden;
-          overflow-y: scroll;
+          -webkit-backdrop-filter: blur(2px) saturate(200%);
         }
-      </style>
-      <div class="overflow-outer">
-        <div>
-          INSIDE!
-          INSIDE!
-          INSIDE!
-          INSIDE!
-          INSIDE!
-          INSIDE!
-          INSIDE!
-          INSIDE!
-          INSIDE!
-        </div>
-      </div>
-      <hr>
+      }
 
-      <h3>Pseudo level 4</h3>
-      <style>
-        .pseudo::selection {
-          color: magenta;
-          background-color: mediumseagreen;
+      @supports (not (-webkit-backdrop-filter: blur(2px))) {
+        .conditional>.not-supported {
+          display: flex;
         }
-      </style>
-      <p class="pseudo">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eveniet iure deserunt quidem laboriosam sint temporibus quibusdam velit, adipisci a sequi dolores. Tenetur, quaerat iure architecto quisquam provident excepturi neque!
+      }
+    </style>
+    <div class="conditional">
+      <div class="supported">Supported in Safari</div>
+      <div class="not-supported">Not Supported in Chrome</div>
+    </div>
+    <hr>
+
+    <h3>Multi Column Layout</h3>
+    <style>
+      #col {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+      }
+    </style>
+    <div id="col">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
-      <hr>
+      <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+      <p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </div>
 
-      <h3>CSS Ruby Level 1</h3>
-      <ruby>
-        <rb>Aerith</rb><rb> </rb><rb>Gainsboro</rb>
-        <rt>エアリス</rt><rt>・</rt><rt>ゲインズブール</rt>
-      </ruby>
+  <hr>
+
+  <div class="testing">
+    <h1>CSS Testing</h1>
+    <h3>Speech (not really supported)</h3>
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        voice-family: paul;
+        voice-stress: moderate;
+        cue-before: url(../audio/ping.wav);
+        voice-volume: medium 6dB;
+      }
+
+      p.heidi {
+        voice-family: female;
+        voice-balance: left;
+        voice-pitch: high;
+        voice-volume: -6dB;
+      }
+
+      p.peter {
+        voice-family: male;
+        voice-balance: right;
+        voice-rate: fast;
+      }
+
+      span.special {
+        voice-volume: soft;
+        pause-after: strong;
+      }
+    </style>
+    <h3>I am Paul, and I speak headings.</h3>
+    <p class="heidi">Hello, I am Heidi.</p>
+    <p class="peter">
+      <span class="special">Can you hear me ?</span>
+      I am Peter.
+    </p>
+    <hr>
+
+    <h3>Grid level 1</h3>
+    <style>
+      .grid-wrapper {
+        max-width: 940px;
+        margin: 0 20px;
+        display: grid;
+        grid-gap: 10px;
+      }
+
+      .grid-wrapper {
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-auto-rows: minmax(150px, auto);
+      }
+
+      .grid-header,
+      .grid-footer {
+        margin-left: 5px;
+        margin-right: 5px;
+        flex: 0 1 100%;
+        grid-column: 1 / -1;
+      }
+
+      .grid-wrapper>* {
+        background-color: #444;
+        color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 150%;
+        margin-bottom: 10px;
+      }
+    </style>
+    <div class="grid-wrapper">
+      <header class="grid-header">My header</header>
+      <div class="panel">Panel A</div>
+      <div class="panel">Panel B</div>
+      <div class="panel">Panel C</div>
+      <div class="panel">Panel D</div>
+      <div class="panel">Panel E</div>
+      <div class="panel">Panel F</div>
+      <div class="panel">Panel G</div>
+      <div class="panel">Panel H</div>
+      <div class="panel">Panel I</div>
+      <div class="panel">Panel J</div>
+      <footer class="grid-footer">My footer</footer>
     </div>
 
     <hr>
+    <h3>Compositing and blending level 1</h3>
+    <div class="conditional">
+      <div class="supported">Supported in Safari</div>
+      <div class="not-supported">Not Supported in Chrome</div>
+    </div>
+    <hr>
+    <h3>Images values and replaced content module level 3</h3>
+    <style>
+      .images-v-3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 5em;
+        /* width: 5em; */
+        background: linear-gradient(white, gray);
+      }
+    </style>
+    <div class="images-v-3">
+      <p>gradients can now be used in any css property that takes an image</p>
+    </div>
+  </div>
 
-    <div class="exploring">
-      <h2>CSS Exploring:</h2>
-      <h3>Device Adaptation Level 1</h3>
-      <style>
+  <hr>
+
+  <h1>CSS Next:</h1>
+  <ul>
+    <li>[x] 2 of the features from "Refining"</li>
+    <li>[x] 2 of the features from "Revising"</li>
+    <li>[x] 2 of the features from "Exploring"</li>
+  </ul>
+
+  <div class="refining">
+    <h2>CSS Refining</h2>
+    <h3>Transforms, Transforms, CSS Timing Functions Level 1, Will Change level 1 (4 items)</h3>
+    <style>
+      .transform-container {
+        border: 5px solid black;
+        perspective: 500px;
+        height: 150px;
+        width: 150px;
+      }
+
+      .transform-container>.transformed {
+        height: 100%;
+        width: 100%;
+        will-change: transform;
+        background-color: blue;
+        transition: transform 1000ms ease-in-out;
+        cursor: pointer;
+      }
+
+      .transform-container:hover>.transformed {
+        transform: rotateY(50deg);
+        transition: transform 1000ms ease-in-out;
+      }
+    </style>
+    <div class="transform-container">
+      <div class="transformed"></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="revising">
+    <h2>CSS Revising</h2>
+    <h3>Overflow level 3</h3>
+    <style>
+      .overflow-outer {
+        height: 5em;
+        width: 5em;
+        overflow: hidden;
+        overflow-y: scroll;
+      }
+    </style>
+    <div class="overflow-outer">
+      <div>
+        INSIDE! INSIDE! INSIDE! INSIDE! INSIDE! INSIDE! INSIDE! INSIDE! INSIDE!
+      </div>
+    </div>
+    <hr>
+
+    <h3>Pseudo level 4</h3>
+    <style>
+      .pseudo::selection {
+        color: magenta;
+        background-color: mediumseagreen;
+      }
+    </style>
+    <p class="pseudo">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eveniet iure deserunt quidem laboriosam sint temporibus quibusdam
+      velit, adipisci a sequi dolores. Tenetur, quaerat iure architecto quisquam provident excepturi neque!
+    </p>
+    <hr>
+
+    <h3>CSS Ruby Level 1</h3>
+    <ruby>
+      <rb>Aerith</rb>
+      <rb> </rb>
+      <rb>Gainsboro</rb>
+      <rt>エアリス</rt>
+      <rt>・</rt>
+      <rt>ゲインズブール</rt>
+    </ruby>
+  </div>
+
+  <hr>
+
+  <div class="exploring">
+    <h2>CSS Exploring:</h2>
+    <h3>Device Adaptation Level 1</h3>
+    <style>
       @viewport {
         width: extend-to-zoom 500px;
         height: extend-to-zoom 600px;
       }
-      </style>
-      (done in css)
-      <hr>
+    </style>
+    (done in css)
+    <hr>
 
-      <h3>Filter Effects Level 1</h3>
-      <hr>
-      <h3>Lists Level 3</h3>
-      <hr>
-      <h3>Font Loading Level 3</h3>
+    <h3>Filter Effects Level 1</h3>
+    <style>
+      .fjord {
+        height: 400px;
+        background-repeat: no-repeat;
+        background-position: 100% 22%, center;
+        background-attachment: fixed, scroll;
+        background-image: url(img/fjord.jpg);
+        filter: saturate(500%)
+      }
+
+      .thor {
+        filter: blur(1px) drop-shadow(16px 16px 20px blue);
+      }
+    </style>
+    <div class="fjord">
+      <img class="thor" src="img/thor.png" width="300">
     </div>
-  </body>
+
+    <hr>
+    <h3>Lists Level 3</h3>
+    <style>
+      .triangle-list {
+        list-style: georgian
+      }
+    </style>
+    <ol class="triangle-list">
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ol>
+    <hr>
+    <h3 id="heading-height">Font Loading Level 3</h3>
+    (see script on html)
+    <script>
+      function measureTextElements() {
+        let height = document.getElementById('heading-height').offsetHeight;
+        console.log(`heading height: ${height}`)
+      }
+
+      async function doEditing() {
+        let height = document.getElementById('heading-height').offsetHeight;
+        console.log(`heading height: ${height}`)
+        // content/layout operations that may cause additional font loads
+        await document.fonts.ready.then(measureTextElements())
+      }
+      doEditing()
+    </script>
+  </div>
+</body>
+
 </html>
